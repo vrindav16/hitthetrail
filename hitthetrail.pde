@@ -3,7 +3,7 @@ run a for loop that moves the picture to the left if the key is pressed
 counter for number of times key is pressed
 if statements for obstacles/ending */
 
-PImage [] img = new PImage[7];
+PImage [] img = new PImage[10];
 PImage hicker;
 PImage hicker1;
 PImage hicker2;
@@ -38,12 +38,17 @@ void setup () {
  img[4] = loadImage("b5.PNG");
  img[5] = loadImage("b6.PNG");
  img[6] = loadImage("b7.PNG");
+ img[7] = loadImage("b8.PNG");
+ img[8] = loadImage("b9.PNG");
+ img[9] = loadImage("b10.PNG");
  hicker = loadImage("hicker.png");
  hicker1 = loadImage("hicker1.png");
  hicker2 = loadImage("hicker2.png");
  bird = loadImage("bird.png");
  background (img[0]);
- text("Instructions:", 100, 50);
+ textSize(20);
+ text("Instructions: Help Nikki reach the waterfall by pressing the right arrow!", 11, 50);
+ text("Remember, life is a journey, not a destination...",11,80);
 }
  
 
@@ -54,21 +59,46 @@ void draw () {
   image(hicker, 50, 525,100,100);
   if (keyCode==RIGHT&&keyPressed&&pressed==false) {
     pressed=true;
-    if ((image<6)) {
-      background (img[image]);  
-      image++; 
-    }//1 first
-        
-    else{ 
-      background (img[6]);
+
+    if (image == 6) { 
+     /*int i = 0;
+      if (keyCode==RIGHT && keyPressed && pressed==false && (i < 4)) {
+          background(img[i+6]);
+          i++;
+      }*/
       image (hicker,50, 525,100,100);
       image (hicker1,50, 525,100,100);
       image (hicker2,50, 525,100,100);
+      birdy.play();
+     
+      text ("Do you hear a birdy? Look around in the next few steps to meet",11,50);
+      text ("a new friend!", 11,80);
+      image++;
     }
+    else if ( image < 10) {
+      background (img[image]);  
+      image++; 
+    }//1 first
+  else {
+     background (
+  } 
+        
    counter++;
    if (counter==8) {
+     delay (500);
      image (bird,150,280,100,100);
-     birdy.play();
+     fill (210,255,110,100);
+     stroke(255, 255, 255);
+     ellipse (100,300,175,125);
+     fill (255,255,255);
+     textSize (15);
+     text ("Hi there", 77, 256);
+     text ("Nikki! 'You know", 47, 272);
+     text ("all those things", 41, 288);
+     text("you've always wanted",27,304);
+     text( "to do? You should go", 20, 320);
+     text(" do them...'", 41, 336);
+     
    }
    if (counter==9) {
      birdy.close();
