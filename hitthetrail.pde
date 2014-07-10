@@ -3,6 +3,23 @@ run a for loop that moves the picture to the left if the key is pressed
 counter for number of times key is pressed
 if statements for obstacles/ending */
 
+/* @pjs preload="b1.PNG";
+@pjs preload="b2.PNG";
+@pjs preload="b3.PNG";
+@pjs preload="b4.PNG";
+@pjs preload="b5.PNG";
+@pjs preload="b6.PNG";
+@pjs preload="b7.PNG";
+@pjs preload="b8.PNG";
+@pjs preload="b9.PNG";
+@pjs preload="b10.PNG";
+@pjs preload="hicker.PNG";
+@pjs preload="hicker1.PNG";
+@pjs preload="hicker2.PNG";
+@pjs preload="waaaa.PNG";
+@pjs preload="watereee.PNG";
+*/
+
 PImage [] img = new PImage[10];
 PImage hicker;
 PImage hicker1;
